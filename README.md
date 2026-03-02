@@ -20,18 +20,6 @@ A premium anime streaming experience with a neon-dark aesthetic.
 - **Video**: React Player (HLS support)
 - **Icons**: Lucide React
 
-## Getting Started
-
-1.  Clone the repository.
-2.  Install dependencies:
-    ```bash
-    npm install
-    ```
-3.  Start the development server:
-    ```bash
-    npm run dev
-    ```
-
 ## Project Structure
 
 -   `src/components`: Reusable UI components.
