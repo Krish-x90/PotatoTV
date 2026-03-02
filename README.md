@@ -1,11 +1,50 @@
-<div align="center">
+# Potato TV
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+A premium anime streaming experience with a neon-dark aesthetic.
 
-  <h1>Built with AI Studio</h2>
+## Features
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+- **Modern UI**: Glassmorphism, neon glow effects, and smooth animations.
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop.
+- **Mock Backend**: Simulated authentication, watchlist, and watch history using local storage.
+- **Video Player**: Custom HLS video player with episode navigation.
+- **Search & Filter**: Real-time search with genre filtering and sorting.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Tech Stack
 
-</div>
+- **Frontend**: React, TypeScript, Vite
+- **Styling**: Tailwind CSS v4
+- **Animations**: Framer Motion
+- **State Management**: Zustand (with persistence)
+- **Routing**: React Router DOM
+- **Video**: React Player (HLS support)
+- **Icons**: Lucide React
+
+## Getting Started
+
+1.  Clone the repository.
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
+
+## Project Structure
+
+-   `src/components`: Reusable UI components.
+-   `src/pages`: Application pages.
+-   `src/store`: Global state management (Auth, User Data).
+-   `src/data`: Mock data for anime and episodes.
+-   `src/layouts`: Main layout wrapper.
+
+## Deployment
+
+This project is ready to be deployed on Vercel or Netlify.
+Simply connect your repository and the build settings will be automatically detected (Vite).
+
+## License
+
+MIT

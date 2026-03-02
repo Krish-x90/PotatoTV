@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0B0B0F;
+  --color-secondary-dark: #12121A;
+  --color-neon-purple: #A020F0;
+  --color-accent-glow: #C77DFF;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B3B3C6;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --animate-pulse-glow: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 10px #A020F0;
+    }
+    50% {
+      opacity: .8;
+      box-shadow: 0 0 20px #C77DFF;
+    }
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+.light {
+  color-scheme: light;
+  --color-background: #F3F4F6;
+  --color-secondary-dark: #FFFFFF;
+  --color-text-primary: #111827;
+  --color-text-secondary: #4B5563;
+  --color-neon-purple: #7C3AED; /* Slightly darker purple for better contrast on light */
+  --color-accent-glow: #8B5CF6;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Utilities */
+.glass-card {
+  background: rgba(18, 18, 26, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.light .glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.neon-border {
+  border: 1px solid var(--color-neon-purple);
+  box-shadow: 0 0 10px rgba(160, 32, 240, 0.3);
+}
+
+.neon-text {
+  text-shadow: 0 0 10px rgba(160, 32, 240, 0.5);
+}
+
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(160, 32, 240, 0.4);
+  border-color: var(--color-accent-glow);
+}
+
+/* Video.js Custom Theme */
+.video-js.vjs-custom-theme .vjs-big-play-button {
+  background-color: rgba(160, 32, 240, 0.8); /* Neon Purple */
+  border-color: #A020F0;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  margin-left: -1em;
+  top: 50%;
+  left: 50%;
+  margin-top: -1em;
+  transition: all 0.3s ease;
+}
+
+.video-js.vjs-custom-theme .vjs-big-play-button:hover {
+  background-color: rgba(160, 32, 240, 1);
+  box-shadow: 0 0 20px rgba(160, 32, 240, 0.6);
+  transform: scale(1.1);
+}
+
+.video-js.vjs-custom-theme .vjs-control-bar {
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.video-js.vjs-custom-theme .vjs-play-progress {
+  background-color: #A020F0;
+}
+
+.video-js.vjs-custom-theme .vjs-slider {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.video-js.vjs-custom-theme .vjs-load-progress {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.video-js.vjs-custom-theme:hover .vjs-big-play-button {
+  background-color: rgba(160, 32, 240, 0.9);
+}
