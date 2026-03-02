@@ -1,38 +1,89 @@
-# Potato TV
+# 🥔 PotatoTV
 
-A premium anime streaming experience with a neon-dark aesthetic.
+PotatoTV is a modern movie & TV streaming web application built with
+React and Vite. It features a dark + neon purple theme, smooth
+animations, and high-performance video playback.
 
-## Features
+------------------------------------------------------------------------
 
-- **Modern UI**: Glassmorphism, neon glow effects, and smooth animations.
-- **Responsive Design**: Fully optimized for mobile, tablet, and desktop.
-- **Mock Backend**: Simulated authentication, watchlist, and watch history using local storage.
-- **Video Player**: Custom HLS video player with episode navigation.
-- **Search & Filter**: Real-time search with genre filtering and sorting.
+## 🚀 Features
 
-## Tech Stack
+-   🎬 Movie & TV streaming UI
+-   ⚡ Fast performance using Vite
+-   🎥 Video playback using React Player / Mux Player
+-   ✨ Smooth animations with Framer Motion
+-   🌙 Dark + Neon Purple theme
+-   📱 Fully responsive design
+-   🔍 Clean and modern UI components
 
-- **Frontend**: React, TypeScript, Vite
-- **Styling**: Tailwind CSS v4
-- **Animations**: Framer Motion
-- **State Management**: Zustand (with persistence)
-- **Routing**: React Router DOM
-- **Video**: React Player (HLS support)
-- **Icons**: Lucide React
+------------------------------------------------------------------------
 
-## Project Structure
+## 🛠️ Tech Stack
 
--   `src/components`: Reusable UI components.
--   `src/pages`: Application pages.
--   `src/store`: Global state management (Auth, User Data).
--   `src/data`: Mock data for anime and episodes.
--   `src/layouts`: Main layout wrapper.
+-   React 18
+-   Vite
+-   Framer Motion
+-   Lucide React
+-   React Player
+-   Mux Player
+-   React Helmet Async
 
-## Deployment
+------------------------------------------------------------------------
 
-This project is ready to be deployed on Vercel or Netlify.
-Simply connect your repository and the build settings will be automatically detected (Vite).
+## 📦 Installation
 
-## License
+Clone the repository:
 
-MIT
+git clone https://github.com/Krish-x90/PotatoTV.git cd PotatoTV
+
+Install dependencies:
+
+npm install
+
+Start development server:
+
+npm run dev
+
+Build for production:
+
+npm run build
+
+Preview production build:
+
+npm run preview
+
+------------------------------------------------------------------------
+
+## 🚀 Deployment
+
+PotatoTV is optimized for deployment on Vercel.
+
+Steps: 1. Push project to GitHub 2. Import repository in Vercel 3.
+Deploy
+
+------------------------------------------------------------------------
+
+## ⚠️ Important Note
+
+This project uses React 18 for dependency compatibility. Do not upgrade
+to React 19 unless all peer dependencies support it.
+
+------------------------------------------------------------------------
+
+## 📁 Project Structure
+
+PotatoTV/ │ ├── src/ │ ├── components/ │ ├── pages/ │ ├── assets/ │ └──
+App.jsx │ ├── public/ ├── package.json └── vite.config.js
+
+------------------------------------------------------------------------
+
+## 👨‍💻 Author
+
+Krish Sarode\
+GitHub: https://github.com/Krish-x90
+
+------------------------------------------------------------------------
+
+## 📄 License
+
+This project is for educational and development purposes.
