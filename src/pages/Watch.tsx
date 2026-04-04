@@ -414,9 +414,9 @@ export const Watch = () => {
                     animate={{ scale: 1, opacity: 1 }}
                     whileHover={{ scale: 1.1 }}
                     onClick={togglePlay}
-                    className="w-20 h-20 rounded-full bg-neon-purple/90 flex items-center justify-center text-white shadow-[0_0_30px_rgba(160,32,240,0.5)] pointer-events-auto"
+                    className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-neon-purple/90 flex items-center justify-center text-white shadow-[0_0_30px_rgba(119,221,119,0.5)] pointer-events-auto"
                   >
-                    <Play size={40} fill="currentColor" className="ml-2" />
+                    <Play size={32} fill="currentColor" className="ml-1.5 md:ml-2 md:size-[40px]" />
                   </motion.button>
                 </div>
               )}
@@ -432,7 +432,7 @@ export const Watch = () => {
                     step="any"
                     value={played}
                     onChange={handleSeekChange}
-                    className="w-full h-1 bg-white/30 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-neon-purple [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-[0_0_10px_#A020F0] hover:[&::-webkit-slider-thumb]:scale-125 transition-all"
+                    className="w-full h-1 bg-white/30 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-neon-purple [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-[0_0_10px_#77DD77] hover:[&::-webkit-slider-thumb]:scale-125 transition-all"
                   />
                 </div>
 
@@ -453,7 +453,7 @@ export const Watch = () => {
                         step="any"
                         value={muted ? 0 : volume}
                         onChange={handleVolumeChange}
-                        className="w-0 group-hover/volume:w-24 transition-all duration-300 h-1 bg-white/30 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-neon-purple [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-[0_0_10px_#A020F0]"
+                        className="w-0 group-hover/volume:w-24 transition-all duration-300 h-1 bg-white/30 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-neon-purple [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:shadow-[0_0_10px_#77DD77]"
                       />
                     </div>
 

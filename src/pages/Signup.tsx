@@ -131,7 +131,7 @@ export const Signup = () => {
           <div className="flex items-center text-sm">
             <label className="flex items-center gap-2 cursor-pointer text-text-secondary hover:text-white transition-colors">
               <input type="checkbox" required className="rounded bg-secondary-dark border-white/10 text-neon-purple focus:ring-neon-purple" />
-              I agree to the <a href="#" className="text-neon-purple hover:underline">Terms of Service</a>
+              I agree to the <Link to="/terms" className="text-neon-purple hover:underline">Terms of Service</Link>
             </label>
           </div>
 

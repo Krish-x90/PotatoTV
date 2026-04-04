@@ -113,7 +113,7 @@ export const Search = () => {
                       onClick={() => handleFilterChange('sort', option.value)}
                       className={`w-full text-left px-3 py-2 rounded-lg text-sm transition-all duration-300 ${
                         (sort === option.value && !genre && !query) || (!sort && !genre && !query && option.value === '')
-                          ? 'bg-neon-purple text-white shadow-[0_0_15px_rgba(160,32,240,0.5)]'
+                          ? 'bg-neon-purple text-white shadow-[0_0_15px_rgba(119,221,119,0.5)]'
                           : 'text-text-secondary hover:bg-white/10 hover:text-white hover:shadow-[0_0_10px_rgba(255,255,255,0.1)]'
                       }`}
                     >
@@ -132,8 +132,8 @@ export const Search = () => {
                       onClick={() => handleFilterChange('genre', g)}
                       className={`px-3 py-1 rounded-full text-xs border transition-all duration-300 ${
                         genre === g
-                          ? 'bg-neon-purple border-neon-purple text-white shadow-[0_0_15px_rgba(160,32,240,0.5)]'
-                          : 'bg-transparent border-white/10 text-text-secondary hover:border-neon-purple/50 hover:text-white hover:shadow-[0_0_10px_rgba(160,32,240,0.2)]'
+                          ? 'bg-neon-purple border-neon-purple text-white shadow-[0_0_15px_rgba(119,221,119,0.5)]'
+                          : 'bg-transparent border-white/10 text-text-secondary hover:border-neon-purple/50 hover:text-white hover:shadow-[0_0_10px_rgba(119,221,119,0.2)]'
                       }`}
                     >
                       {g}

@@ -30,7 +30,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ featuredAnime }) => 
   if (!featuredAnime.length) return null;
 
   return (
-    <div className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden bg-black">
+    <div className="relative h-[70vh] md:h-[80vh] w-full overflow-hidden bg-black">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -51,38 +51,38 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ featuredAnime }) => 
 
           {/* Content */}
           <div className="absolute inset-0 container mx-auto px-4 flex items-center">
-            <div className="max-w-2xl pt-20">
+            <div className="max-w-2xl pt-10 md:pt-20">
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
               >
-                <span className="text-neon-purple font-bold tracking-wider text-sm uppercase mb-2 block">
+                <span className="text-neon-purple font-bold tracking-wider text-xs md:text-sm uppercase mb-2 block">
                   #{currentIndex + 1} Spotlight
                 </span>
-                <h1 className="text-4xl md:text-6xl font-black text-white mb-4 leading-tight neon-text">
+                <h1 className="text-3xl md:text-6xl font-black text-white mb-4 leading-tight neon-text">
                   {featuredAnime[currentIndex].title}
                 </h1>
                 
-                <div className="flex items-center gap-4 mb-6 text-sm md:text-base text-text-secondary">
+                <div className="flex items-center gap-3 md:gap-4 mb-6 text-xs md:text-base text-text-secondary">
                   <span className="text-green-400 font-bold">{featuredAnime[currentIndex].rating} Match</span>
                   <span>{featuredAnime[currentIndex].year}</span>
-                  <span className="border border-white/20 px-2 py-0.5 rounded text-xs">{featuredAnime[currentIndex].status}</span>
+                  <span className="border border-white/20 px-2 py-0.5 rounded text-[10px] md:text-xs">{featuredAnime[currentIndex].status}</span>
                   <span>{featuredAnime[currentIndex].episodes} Episodes</span>
                 </div>
 
-                <p className="text-text-secondary line-clamp-3 mb-8 text-sm md:text-lg max-w-xl">
+                <p className="text-text-secondary line-clamp-2 md:line-clamp-3 mb-8 text-sm md:text-lg max-w-xl">
                   {featuredAnime[currentIndex].description}
                 </p>
 
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-3 md:gap-4">
                   <Link to={`/watch/${featuredAnime[currentIndex].id}`}>
-                    <Button size="lg" leftIcon={<Play size={20} fill="currentColor" />}>
+                    <Button size="lg" className="px-6 md:px-8" leftIcon={<Play size={20} fill="currentColor" />}>
                       Watch Now
                     </Button>
                   </Link>
                   <Link to={`/anime/${featuredAnime[currentIndex].id}`}>
-                    <Button variant="secondary" size="lg" leftIcon={<Info size={20} />}>
+                    <Button variant="secondary" size="lg" className="px-6 md:px-8" leftIcon={<Info size={20} />}>
                       More Info
                     </Button>
                   </Link>
@@ -116,7 +116,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({ featuredAnime }) => 
             key={idx}
             onClick={() => setCurrentIndex(idx)}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              idx === currentIndex ? 'w-8 bg-neon-purple shadow-[0_0_10px_#A020F0]' : 'w-2 bg-white/30 hover:bg-white/50'
+              idx === currentIndex ? 'w-8 bg-neon-purple shadow-[0_0_10px_#77DD77]' : 'w-2 bg-white/30 hover:bg-white/50'
             }`}
           />
         ))}

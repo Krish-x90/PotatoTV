@@ -65,7 +65,7 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 z-50">
-          <div className="w-8 h-8 bg-neon-purple rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(160,32,240,0.5)]">
+          <div className="w-8 h-8 bg-neon-purple rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(119,221,119,0.5)]">
             <Play size={16} fill="white" className="text-white ml-0.5" />
           </div>
           <span className="text-xl font-bold tracking-tight text-text-primary">
@@ -188,6 +188,8 @@ export const Navbar = () => {
                 <Link to="/search?sort=popular" className="text-text-secondary py-2 border-b border-white/5">Popular</Link>
                 <Link to="/search?sort=trending" className="text-text-secondary py-2 border-b border-white/5">Trending</Link>
                 <Link to="/search?genre=Action" className="text-text-secondary py-2 border-b border-white/5">Genres</Link>
+                <Link to="/about" className="text-text-secondary py-2 border-b border-white/5">About Us</Link>
+                <Link to="/contact" className="text-text-secondary py-2 border-b border-white/5">Contact</Link>
               </div>
 
               {isAuthenticated ? (

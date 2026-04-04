@@ -20,6 +20,7 @@ interface UserStoreState {
   addToWatchlist: (animeId: string) => void;
   removeFromWatchlist: (animeId: string) => void;
   isInWatchlist: (animeId: string) => boolean;
+  toggleWatchlist: (animeId: string) => void;
   addToFavorites: (animeId: string) => void;
   removeFromFavorites: (animeId: string) => void;
   isFavorite: (animeId: string) => boolean;
@@ -40,6 +41,14 @@ export const useUserStore = create<UserStoreState>()(
         watchlist: state.watchlist.filter((id) => id !== animeId) 
       })),
       isInWatchlist: (animeId) => get().watchlist.includes(animeId),
+      toggleWatchlist: (animeId) => {
+        const { watchlist, addToWatchlist, removeFromWatchlist } = get();
+        if (watchlist.includes(animeId)) {
+          removeFromWatchlist(animeId);
+        } else {
+          addToWatchlist(animeId);
+        }
+      },
       addToFavorites: (animeId) => set((state) => ({ 
         favorites: state.favorites.includes(animeId) ? state.favorites : [...state.favorites, animeId] 
       })),

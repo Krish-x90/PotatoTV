@@ -3,8 +3,8 @@
 @theme {
   --color-background: #0B0B0F;
   --color-secondary-dark: #12121A;
-  --color-neon-purple: #A020F0;
-  --color-accent-glow: #C77DFF;
+  --color-neon-purple: #77DD77; /* Pastel Green */
+  --color-accent-glow: #B2F2BB; /* Lighter Pastel Green */
   --color-text-primary: #FFFFFF;
   --color-text-secondary: #B3B3C6;
   
@@ -16,11 +16,11 @@
   @keyframes pulse-glow {
     0%, 100% {
       opacity: 1;
-      box-shadow: 0 0 10px #A020F0;
+      box-shadow: 0 0 10px #77DD77;
     }
     50% {
       opacity: .8;
-      box-shadow: 0 0 20px #C77DFF;
+      box-shadow: 0 0 20px #B2F2BB;
     }
   }
 }
@@ -35,8 +35,8 @@
   --color-secondary-dark: #FFFFFF;
   --color-text-primary: #111827;
   --color-text-secondary: #4B5563;
-  --color-neon-purple: #7C3AED; /* Slightly darker purple for better contrast on light */
-  --color-accent-glow: #8B5CF6;
+  --color-neon-purple: #51CF66; /* Slightly darker green for better contrast on light */
+  --color-accent-glow: #69DB7C;
 }
 
 body {
@@ -61,11 +61,11 @@ body {
 
 .neon-border {
   border: 1px solid var(--color-neon-purple);
-  box-shadow: 0 0 10px rgba(160, 32, 240, 0.3);
+  box-shadow: 0 0 10px rgba(119, 221, 119, 0.3);
 }
 
 .neon-text {
-  text-shadow: 0 0 10px rgba(160, 32, 240, 0.5);
+  text-shadow: 0 0 10px rgba(119, 221, 119, 0.5);
 }
 
 .hover-glow {
@@ -73,14 +73,14 @@ body {
 }
 
 .hover-glow:hover {
-  box-shadow: 0 0 20px rgba(160, 32, 240, 0.4);
+  box-shadow: 0 0 20px rgba(119, 221, 119, 0.4);
   border-color: var(--color-accent-glow);
 }
 
 /* Video.js Custom Theme */
 .video-js.vjs-custom-theme .vjs-big-play-button {
-  background-color: rgba(160, 32, 240, 0.8); /* Neon Purple */
-  border-color: #A020F0;
+  background-color: rgba(119, 221, 119, 0.8); /* Pastel Green */
+  border-color: #77DD77;
   border-radius: 50%;
   width: 2em;
   height: 2em;
@@ -93,8 +93,8 @@ body {
 }
 
 .video-js.vjs-custom-theme .vjs-big-play-button:hover {
-  background-color: rgba(160, 32, 240, 1);
-  box-shadow: 0 0 20px rgba(160, 32, 240, 0.6);
+  background-color: rgba(119, 221, 119, 1);
+  box-shadow: 0 0 20px rgba(119, 221, 119, 0.6);
   transform: scale(1.1);
 }
 
@@ -104,7 +104,7 @@ body {
 }
 
 .video-js.vjs-custom-theme .vjs-play-progress {
-  background-color: #A020F0;
+  background-color: #77DD77;
 }
 
 .video-js.vjs-custom-theme .vjs-slider {
@@ -116,5 +116,5 @@ body {
 }
 
 .video-js.vjs-custom-theme:hover .vjs-big-play-button {
-  background-color: rgba(160, 32, 240, 0.9);
+  background-color: rgba(119, 221, 119, 0.9);
 }

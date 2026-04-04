@@ -1,17 +1,23 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyC45ZPwGUsnBtwFi4L_tzWLoW1aJsu8GNw",
-  authDomain: "potatotv-53ca1.firebaseapp.com",
-  projectId: "potatotv-53ca1",
-  storageBucket: "potatotv-53ca1.firebasestorage.app",
-  messagingSenderId: "713172135246",
-  appId: "1:713172135246:web:cc0064d47a7c949743021f"
-};
+import { getFirestore, doc, getDocFromServer } from "firebase/firestore";
+import firebaseConfig from "../../firebase-applet-config.json";
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
+
+// Validate Connection to Firestore
+async function testConnection() {
+  try {
+    await getDocFromServer(doc(db, 'test', 'connection'));
+  } catch (error) {
+    if(error instanceof Error && error.message.includes('the client is offline')) {
+      console.error("Please check your Firebase configuration. ");
+    }
+  }
+}
+testConnection();
+
 export default app;

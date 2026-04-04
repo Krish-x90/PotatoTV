@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar } from '../components/Navbar';
 import { motion } from 'framer-motion';
 import { Github, Instagram, Linkedin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -33,19 +34,19 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
             <div>
               <h4 className="text-white font-medium mb-4">Links</h4>
               <ul className="space-y-2 text-sm text-text-secondary">
-                <li><a href="#" className="hover:text-neon-purple transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-neon-purple transition-colors">Contact</a></li>
-                <li><a href="#" className="hover:text-neon-purple transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-neon-purple transition-colors">Privacy Policy</a></li>
+                <li><Link to="/about" className="hover:text-neon-purple transition-colors">About Us</Link></li>
+                <li><Link to="/contact" className="hover:text-neon-purple transition-colors">Contact</Link></li>
+                <li><Link to="/terms" className="hover:text-neon-purple transition-colors">Terms of Service</Link></li>
+                <li><Link to="/privacy" className="hover:text-neon-purple transition-colors">Privacy Policy</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-medium mb-4">Genres</h4>
               <ul className="space-y-2 text-sm text-text-secondary">
-                <li><a href="#" className="hover:text-neon-purple transition-colors">Action</a></li>
-                <li><a href="#" className="hover:text-neon-purple transition-colors">Adventure</a></li>
-                <li><a href="#" className="hover:text-neon-purple transition-colors">Comedy</a></li>
-                <li><a href="#" className="hover:text-neon-purple transition-colors">Fantasy</a></li>
+                <li><Link to="/search?q=Action" className="hover:text-neon-purple transition-colors">Action</Link></li>
+                <li><Link to="/search?q=Adventure" className="hover:text-neon-purple transition-colors">Adventure</Link></li>
+                <li><Link to="/search?q=Comedy" className="hover:text-neon-purple transition-colors">Comedy</Link></li>
+                <li><Link to="/search?q=Fantasy" className="hover:text-neon-purple transition-colors">Fantasy</Link></li>
               </ul>
             </div>
             <div>

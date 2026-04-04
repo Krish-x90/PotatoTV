@@ -19,9 +19,9 @@ interface ButtonProps extends Omit<HTMLMotionProps<"button">, "ref" | "children"
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = 'primary', size = 'md', isLoading, leftIcon, rightIcon, children, ...props }, ref) => {
     const variants = {
-      primary: 'bg-neon-purple text-white hover:bg-opacity-80 shadow-[0_0_15px_rgba(160,32,240,0.5)] hover:shadow-[0_0_25px_rgba(160,32,240,0.7)] border border-transparent',
+      primary: 'bg-neon-purple text-white hover:bg-opacity-80 shadow-[0_0_15px_rgba(119,221,119,0.5)] hover:shadow-[0_0_25px_rgba(119,221,119,0.7)] border border-transparent',
       secondary: 'bg-secondary-dark text-white hover:bg-white/10 border border-white/10',
-      outline: 'bg-transparent border border-neon-purple text-neon-purple hover:bg-neon-purple/10 shadow-[0_0_10px_rgba(160,32,240,0.2)]',
+      outline: 'bg-transparent border border-neon-purple text-neon-purple hover:bg-neon-purple/10 shadow-[0_0_10px_rgba(119,221,119,0.2)]',
       ghost: 'bg-transparent text-text-secondary hover:text-white hover:bg-white/5',
       danger: 'bg-red-600 text-white hover:bg-red-700 shadow-md',
     };

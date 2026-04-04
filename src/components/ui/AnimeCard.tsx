@@ -64,7 +64,7 @@ export const AnimeCard: React.FC<AnimeCardProps> = ({ anime, index = 0 }) => {
       className="group relative w-full"
     >
       <Link to={`/anime/${anime.id}`} className="block">
-        <div className="relative aspect-[2/3] overflow-hidden rounded-xl bg-secondary-dark border border-white/5 shadow-lg group-hover:shadow-[0_0_25px_rgba(160,32,240,0.4)] group-hover:border-neon-purple/50 transition-all duration-300">
+        <div className="relative aspect-[2/3] overflow-hidden rounded-xl bg-secondary-dark border border-white/5 shadow-lg group-hover:shadow-[0_0_25px_rgba(119,221,119,0.4)] group-hover:border-neon-purple/50 transition-all duration-300">
           <img
             src={anime.poster}
             alt={anime.title}
@@ -79,7 +79,7 @@ export const AnimeCard: React.FC<AnimeCardProps> = ({ anime, index = 0 }) => {
               onClick={handleWatchlistClick}
               className={`p-1.5 rounded-md backdrop-blur-md transition-all duration-300 ${
                 isInWatchlist 
-                  ? 'bg-neon-purple text-white shadow-[0_0_10px_#A020F0]' 
+                  ? 'bg-neon-purple text-white shadow-[0_0_10px_#77DD77]' 
                   : 'bg-black/60 text-white/70 hover:bg-white hover:text-black hover:scale-110'
               }`}
               title={isInWatchlist ? "Remove from Watchlist" : "Add to Watchlist"}

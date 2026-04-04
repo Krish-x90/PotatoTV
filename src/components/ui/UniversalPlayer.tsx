@@ -36,14 +36,14 @@ export const UniversalPlayer = forwardRef<UniversalPlayerRef, UniversalPlayerPro
   onError,
   className
 }, ref) => {
-  const reactPlayerRef = useRef<ReactPlayer>(null);
+  const reactPlayerRef = useRef<any>(null);
   const clapprRef = useRef<ClapprPlayerRef>(null);
   const videoJsRef = useRef<VideoJSPlayerRef>(null);
 
   useImperativeHandle(ref, () => ({
-    seekTo: (amount: number, type: 'seconds' | 'fraction' = 'fraction') => {
+    seekTo: (amount: number, seekType: 'seconds' | 'fraction' = 'fraction') => {
       if (type === 'react-player' && reactPlayerRef.current) {
-        reactPlayerRef.current.seekTo(amount, type);
+        reactPlayerRef.current.seekTo(amount, seekType);
       } else if (type === 'clappr' && clapprRef.current) {
          // Clappr wrapper expects seconds. 
          clapprRef.current.seekTo(amount);
@@ -116,8 +116,9 @@ export const UniversalPlayer = forwardRef<UniversalPlayerRef, UniversalPlayerPro
   }
 
   // Default to ReactPlayer
+  const Player = ReactPlayer as any;
   return (
-    <ReactPlayer
+    <Player
       ref={reactPlayerRef}
       url={source}
       width="100%"
@@ -127,7 +128,7 @@ export const UniversalPlayer = forwardRef<UniversalPlayerRef, UniversalPlayerPro
       volume={volume}
       muted={muted}
       onReady={() => onReady && onReady(reactPlayerRef.current)}
-      onProgress={onProgress}
+      onProgress={onProgress as any}
       onDuration={onDuration}
       onEnded={onEnded}
       onError={onError}
@@ -142,7 +143,7 @@ export const UniversalPlayer = forwardRef<UniversalPlayerRef, UniversalPlayerPro
         youtube: {
           playerVars: { showinfo: 0, controls: 0, modestbranding: 1 }
         }
-      }}
+      } as any}
       className={className}
     />
   );

@@ -20,6 +20,10 @@ const Search = React.lazy(() => import('./pages/Search').then(module => ({ defau
 const Login = React.lazy(() => import('./pages/Login').then(module => ({ default: module.Login })));
 const Signup = React.lazy(() => import('./pages/Signup').then(module => ({ default: module.Signup })));
 const Profile = React.lazy(() => import('./pages/Profile').then(module => ({ default: module.Profile })));
+const AboutUs = React.lazy(() => import('./pages/AboutUs').then(module => ({ default: module.AboutUs })));
+const Contact = React.lazy(() => import('./pages/Contact').then(module => ({ default: module.Contact })));
+const TermsOfService = React.lazy(() => import('./pages/TermsOfService').then(module => ({ default: module.TermsOfService })));
+const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy').then(module => ({ default: module.PrivacyPolicy })));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -44,6 +48,10 @@ function AnimatedRoutes() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/terms" element={<TermsOfService />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
     </AnimatePresence>
   );

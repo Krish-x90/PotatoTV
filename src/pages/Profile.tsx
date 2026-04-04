@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { User, Clock, Heart, LogOut, Camera } from 'lucide-react';
+import { User, Clock, Heart, LogOut, Camera, Play } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { AnimeCard } from '../components/ui/AnimeCard';
 import { useAuthStore } from '../store/useAuthStore';
@@ -9,6 +9,15 @@ import { useUserStore } from '../store/useUserStore';
 import { SEO } from '../components/SEO';
 import { getAnimeDetails } from '../services/tmdb';
 import { Anime } from '../types';
+
+type HistoryAnimeItem = Anime & { 
+  animeId: string; 
+  episodeId: string; 
+  timestamp: number; 
+  lastWatched: number;
+  totalEpisodes: number;
+  type: 'tv' | 'movie';
+};
 
 export const Profile = () => {
   const { user, isAuthenticated, logout, updateAvatar } = useAuthStore();
@@ -47,7 +56,7 @@ export const Profile = () => {
           const anime = historyAnimeMap.get(h.animeId);
           return anime ? { ...anime, ...h } : null;
         })
-        .filter((item): item is (Anime & { animeId: string; episodeId: string; timestamp: number; lastWatched: number }) => item !== null)
+        .filter((item): item is HistoryAnimeItem => item !== null)
         .sort((a, b) => b.lastWatched - a.lastWatched);
 
         setHistoryAnime(combinedHistory);
@@ -83,7 +92,7 @@ export const Profile = () => {
               <img 
                 src={user.avatar} 
                 alt={user.username} 
-                className="w-32 h-32 rounded-full border-4 border-secondary-dark shadow-[0_0_20px_rgba(160,32,240,0.3)]"
+                className="w-32 h-32 rounded-full border-4 border-secondary-dark shadow-[0_0_20px_rgba(119,221,119,0.3)]"
               />
               <button 
                 onClick={handleAvatarChange}
@@ -132,11 +141,11 @@ export const Profile = () => {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {historyAnime.slice(0, 2).map((item) => (
-                  <Link 
-                    key={`continue-${item.id}`}
-                    to={`/watch/${item.id}?ep=${item.episodeId.split('_e')[1] || item.episodeId.split('-ep-')[1]}`}
-                    className="flex gap-4 bg-secondary-dark border border-white/5 hover:border-neon-purple/50 rounded-xl p-4 transition-all group hover:shadow-[0_0_20px_rgba(160,32,240,0.15)] hover:bg-white/5"
-                  >
+                    <Link 
+                      key={`continue-${item.id}`}
+                      to={`/watch/${item.id}?ep=${item.episodeId.split('_e')[1] || item.episodeId.split('-ep-')[1]}`}
+                      className="flex gap-4 bg-secondary-dark border border-white/5 hover:border-neon-purple/50 rounded-xl p-4 transition-all group hover:shadow-[0_0_20px_rgba(119,221,119,0.15)] hover:bg-white/5"
+                    >
                     <div className="relative w-24 h-36 flex-shrink-0 rounded-lg overflow-hidden shadow-lg">
                       <img src={item.poster} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                       <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
@@ -151,7 +160,7 @@ export const Profile = () => {
                       
                       <div className="w-full bg-black/50 h-2 rounded-full overflow-hidden mb-2">
                         <div 
-                          className="h-full bg-gradient-to-r from-neon-purple to-purple-400 shadow-[0_0_10px_#A020F0]" 
+                          className="h-full bg-gradient-to-r from-neon-purple to-accent-glow shadow-[0_0_10px_#77DD77]" 
                           style={{ width: `${Math.min((item.timestamp / 1440) * 100, 100)}%` }}
                         />
                       </div>

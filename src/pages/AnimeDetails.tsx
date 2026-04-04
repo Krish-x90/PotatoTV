@@ -93,7 +93,7 @@ export const AnimeDetails = () => {
             animate={{ opacity: 1, y: 0 }}
             className="w-full md:w-72 flex-shrink-0 mx-auto md:mx-0"
           >
-            <div className="rounded-xl overflow-hidden shadow-[0_0_30px_rgba(160,32,240,0.3)] border border-white/10">
+            <div className="rounded-xl overflow-hidden shadow-[0_0_30px_rgba(119,221,119,0.3)] border border-white/10">
               <img src={anime.poster} alt={anime.title} className="w-full h-auto" />
             </div>
             <div className="mt-4 flex gap-2">
